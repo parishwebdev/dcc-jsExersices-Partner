@@ -39,7 +39,7 @@ function reverseString(text){
 displayResult(reverseString("hello")); */
 
 
-
+/* ~~~ Come Back To Later and Do With an Array if Time ~~~  */
 // #3
 /*
 function makeLowCaseOnSpace(text){
@@ -62,21 +62,27 @@ displayResult(captilzeFirstLetter(makeLowCaseOnSpace("hello i am learning.")));
 function CheckForRepeat(originalString) {
     let repeatCount = 1;
     let holderLet = "";
-    for(var i = 1; i< originalString.length; i++) {
+    for(let i = 1; i< originalString.length; i++) {
 
         if(originalString.charAt(i) == originalString.charAt(i-1)) {
-            repeatCount++;
-        } else if (originalString.charAt(i) != originalString.charAt(i-1)) {
-        	repeatCount = 1;
-        	
-        }
+            
+        	repeatCount++;
+        	if(i == originalString.length-1){
+        		holderLet += repeatCount + originalString.charAt(i-1);
+        	}
+        } 
+        else if (originalString.charAt(i) !== originalString.charAt(i-1)) {
+        		holderLet += repeatCount + originalString.charAt(i-1)
+        		repeatCount = 1;
+        	}
         else {
         	holderLet += repeatCount + originalString.charAt(i-1);
+
         }   
     }
     return holderLet;
 }
-displayResult(CheckForRepeat("aaabbbb"));
+displayResult(CheckForRepeat("aaabbbbcc"));
 
 
 
