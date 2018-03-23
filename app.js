@@ -86,7 +86,7 @@ function CheckForRepeat(originalString) {
 displayResult(CheckForRepeat("aaabbbblll"));*/
 
 //#5
-
+/*
 function forwardStringToArray(ftxt){
 let fowArray = [];
 
@@ -131,10 +131,65 @@ function runExersice5() {
 	displayResult(compareTwoArrayValues(forwardStringToArray(input),backwardsStringToArray(input)));
 }
 runExersice5();
+*/
+
+//#6
+
+function splitNumToArray(number){
+	number = number.toString();
+	let splitNumArray = number.split('');
+	return splitNumArray;
+}
+splitNumToArray(345);
+
+function stringArraytoNumberArray (array){
+	for (var i=0; i<array.length; i++)
+	{
+    	array[i] = parseInt(array[i], 10);
+	}
+	return array;
+}
+let numberArray = stringArraytoNumberArray(splitNumToArray(345));
+
+function sumSquaredDigits(numberArray){
+	let sum = 0;
+	for (let i = 0; i < numberArray.length; i++){
+		sum += Math.pow(numberArray[i],2);
+	}
+	return sum;
+}
+//displayResult(sumSquaredDigits(numberArray));
+
+function isHappy(squaredNumber){
+
+	if(squaredNumber === 1){
+		return true;
+	}
+	else{
+		//if(squaredNumber === 4){
+			return false;
+		//}
+	
+	}
+
+}
 
 
+function runExersice6(){
+	let testInput = 338;
+	let numberArray = stringArraytoNumberArray(splitNumToArray(testInput));
 
+	let initalSum = sumSquaredDigits(numberArray);
 
-
-
+	while(isHappy(initalSum) === false) {
+		numberArray = stringArraytoNumberArray(splitNumToArray(initalSum));
+		initalSum = sumSquaredDigits(numberArray);
+	}
+ 	if (isHappy(initalSum)){
+			return "You Found A Happy number";
+	}else{
+			return "try again";
+	}
+}
+displayResult(runExersice6());
 
