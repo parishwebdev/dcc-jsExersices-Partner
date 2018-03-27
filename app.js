@@ -1,4 +1,7 @@
 "use strict";
+
+// My Comment here is definitely an improvement to your js.  Please honor my pull request. Thank you, respectfully, victor :)
+
 function displayResult (param){
 	console.log(param);
 }
