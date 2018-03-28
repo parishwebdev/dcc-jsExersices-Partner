@@ -137,7 +137,6 @@ runExersice5();
 */
 
 //#6
-
 function splitNumToArray(number){
 	number = number.toString();
 	let splitNumArray = number.split('');
@@ -164,34 +163,24 @@ function sumSquaredDigits(numberArray){
 //displayResult(sumSquaredDigits(numberArray));
 
 function isHappy(squaredNumber){
-
-	if(squaredNumber === 1){
-		return true;
-	}
-	else{
-		//if(squaredNumber === 4){
-			return false;
-		//}
-	
-	}
-
+		return (squaredNumber == 1); //don't need if statement, the comparison in () will return true or false;
 }
 
-
 function runExersice6(){
-	let testInput = 338;
-	let numberArray = stringArraytoNumberArray(splitNumToArray(testInput));
+	let userInput = getUserInput("Check if your number is happy: ");
+	let numberArray = stringArraytoNumberArray(splitNumToArray(userInput));
+	let collector = [] ;
+	let initalSum = userInput;
 
-	let initalSum = sumSquaredDigits(numberArray);
-
-	while(isHappy(initalSum) === false) {
+	while(initalSum != 1 && collector[initalSum] !== true) {
+		collector[initalSum] = true;
 		numberArray = stringArraytoNumberArray(splitNumToArray(initalSum));
 		initalSum = sumSquaredDigits(numberArray);
 	}
  	if (isHappy(initalSum)){
 			return "You Found A Happy number";
 	}else{
-			return "try again";
+			return "Try again";
 	}
 }
 displayResult(runExersice6());
