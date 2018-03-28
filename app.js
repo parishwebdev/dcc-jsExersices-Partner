@@ -137,6 +137,7 @@ runExersice5();
 */
 
 //#6
+/*
 function splitNumToArray(number){
 	number = number.toString();
 	let splitNumArray = number.split('');
@@ -183,5 +184,30 @@ function runExersice6(){
 			return "Try again";
 	}
 }
-displayResult(runExersice6());
+displayResult(runExersice6());*/
 
+//#7
+
+function checkPrimaryNumber(num){
+	
+	for(let i = 2; i <= num; i++){
+		if(num % i === 0){
+			return false;
+			}
+		else{
+
+			return true;
+		 }
+	}
+}
+//checkPrimaryNumber(149);
+function isPrimary(output){
+	let result = "";
+	if (output === true){
+		result = "Yes a Primary Number";
+	}else{
+		result = "No not a Primary Number"
+	}
+	return result;
+}
+displayResult(isPrimary(checkPrimaryNumber(149)));
