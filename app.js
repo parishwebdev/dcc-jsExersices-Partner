@@ -187,9 +187,8 @@ function runExersice6(){
 displayResult(runExersice6());*/
 
 //#7
-
+/*
 function checkPrimaryNumber(num){
-	
 	for(let i = 2; i <= num; i++){
 		if(num % i === 0){
 			return false;
@@ -211,3 +210,43 @@ function isPrimary(output){
 	return result;
 }
 displayResult(isPrimary(checkPrimaryNumber(149)));
+
+function runNumber7(){
+	let userInput = getUserInput("Check if your number is prime: ");
+	displayResult(isPrimary(checkPrimaryNumber(userInput)));
+}
+runNumber7();*/
+
+/*
+    previous = array[i-1];
+    current = array[i];
+    next = array[i+1];
+
+ */
+
+function fibonacciNumber(startnumber, limit){
+	let tempArray = [startnumber,startnumber];
+	let firstNumber;
+	let secondNumber;
+
+
+	for (let i = startnumber; tempArray[tempArray.length-1] <= limit; i++){
+        if (tempArray[0] == i){
+          	firstNumber = tempArray[0];
+        }else{
+        	firstNumber = tempArray[i-2];
+        }
+		 secondNumber =  tempArray[i-1];
+
+
+
+		let runningSum = secondNumber + firstNumber;
+
+		tempArray.push(runningSum);
+		if(tempArray[tempArray.length-1] > limit) {
+			break;
+		}
+		return tempArray;
+	}
+}
+
