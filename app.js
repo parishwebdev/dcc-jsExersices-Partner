@@ -217,13 +217,8 @@ function runNumber7(){
 }
 runNumber7();*/
 
-/*
-    previous = array[i-1];
-    current = array[i];
-    next = array[i+1];
 
- */
-
+//#8
 function fibonacciNumber(startnumber, limit){
 	let tempArray = [startnumber,startnumber];
 	let firstNumber;
@@ -238,15 +233,16 @@ function fibonacciNumber(startnumber, limit){
         }
 		 secondNumber =  tempArray[i-1];
 
-
-
 		let runningSum = secondNumber + firstNumber;
 
-		tempArray.push(runningSum);
-		if(tempArray[tempArray.length-1] > limit) {
+		if (runningSum >= limit){
 			break;
 		}
-		return tempArray;
+		else{
+			tempArray.push(runningSum);
+		}
+		
 	}
+	return tempArray;
 }
-
+displayResult(fibonacciNumber(2,24));
